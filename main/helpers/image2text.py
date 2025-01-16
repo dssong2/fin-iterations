@@ -1,4 +1,4 @@
-## Not needed but useful if needed for something else
+## Not used but useful if needed for something else
 
 from PIL import ImageGrab
 from pytesseract import image_to_string
