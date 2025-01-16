@@ -3,10 +3,12 @@ import pygetwindow as gw
 import time
 
 def setup():
+    time.sleep(1)
     ag.doubleClick(92, 175)
     ag.press('enter')
 
 def input_geometry(root_chord, tip_chord, height_span, sweep_length):
+    time.sleep(0.5)
     for i in range(3):
         ag.press('tab')
     ag.hotkey('ctrl', 'a')

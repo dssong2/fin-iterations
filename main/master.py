@@ -1,14 +1,26 @@
 import numpy as np
-import pygetwindow as gw
+import os
+
 import openrocket.or_input as ori
 import ras.ras_input as rasi
 import openrocket.or_output as oro
 import ras.ras_output as raso
 from helpers.windows import activate_window, minimize_window
 
-## Identify correct window name
-file_name = input("Enter the OpenRocket file name (do not include .ork extension): ")
-open_rocket = f"Rocket ({file_name}.ork)"
+# Path to the folder containing the file
+folder_path = "./openrocket"
+
+# Get all files in the folder
+files = os.listdir(folder_path)
+
+file_name = None
+# Find the desired file
+for file in files:
+    if file.endswith(".ork"):
+        file_name = file
+        break
+
+open_rocket = f"Rocket ({file_name})"
 
 ## Must minimize first before activating
 minimize_window(open_rocket)
