@@ -7,19 +7,15 @@ import openrocket.or_output as oro
 import ras.ras_output as raso
 from helpers.windows import activate_window, minimize_window
 
-# Path to the folder containing the file
 folder_path = "./openrocket"
-
-# Get all files in the folder
-files = os.listdir(folder_path)
+files = os.listdir(folder_path) # Gets all file names in openrocket folder
 
 file_name = None
-# Find the desired file
+# Find the OpenRocket file
 for file in files:
     if file.endswith(".ork"):
         file_name = file
         break
-
 open_rocket = f"Rocket ({file_name})"
 
 ## Must minimize first before activating
