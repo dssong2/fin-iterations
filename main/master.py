@@ -18,6 +18,7 @@ for file in files:
         break
 open_rocket = f"Rocket ({file_name})"
 
+
 ## Must minimize first before activating
 minimize_window(open_rocket)
 minimize_window("RASAero II")
