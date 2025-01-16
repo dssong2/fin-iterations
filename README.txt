@@ -12,7 +12,7 @@ Safety Information:
 
 Setup Process:
     OpenRocket (version 24.12.beta.1):
-        1. Move the OpenRocket file location to the "openrocket" folder here in ...\Fin Iteration Automation\main\openrocket
+        1. Move the OpenRocket file location to the "openrocket" folder here in ...\fin-iterations\main\openrocket
         2. Open the OpenRocket file you would like to run fin iterations on in the new location
             a. ** VERY IMPORTANT: YOU MUST FULLSCREEN THE WINDOW **
         3. Ensure you have Damping Ratio custom expression setup. If not, follow these steps:
@@ -35,9 +35,9 @@ Setup Process:
         11. Check screenshot to ensure everything is the same (sustainer only, # comment options)
         12. Click on "Export"
         13. Select the export file location to the "openrocket" folder
-            a. Relative path: "...\Fin Iteration Automation\main\openrocket"
+            a. Relative path: "...\fin-iterations\main\openrocket"
             b. You can find the path to this folder by typing "pwd" in the terminal
-            c. Example path: C:\Users\astro\OneDrive - University of Illinois - Urbana\ISS\SDA 24-25\Fin Iteration Automation\main
+            c. Example path: C:\Users\astro\OneDrive - University of Illinois - Urbana\ISS\SDA 24-25\fin-iterations\main
             e. This will ensure everytime the code runs, it will always save to the same destination
         14. Name the file "damping ratio", DO NOT CHANGE THIS NAME
             a. We want to overwrite this file through iterations so we don't end up with a million damping ratio files :D
@@ -49,7 +49,7 @@ Setup Process:
         1. Open corresponding RASAero file
             a. ** VERY IMPORTANT: YOU MUST FULLSCREEN THE WINDOW **
         2. Make sure you place your RASAero file in the "ras" folder
-            a. Path should be ...\Fin Iteration Automation\main\ras\
+            a. Path should be ...\fin-iterations\main\ras\
             b. This will ensure all exported data will save in the ras folder and be accessible
         3. Ensure motor files have been imported (check for correct motors in "Flight Simulations)
             a. File > Select motor file
