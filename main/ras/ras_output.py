@@ -5,7 +5,6 @@ import time
 
 def get_ras_data():
     while True:
-        # time.sleep(3)
         current_windows = gw.getAllTitles()
         flight_windows = [title for title in current_windows if title == "Flight"]
         # Check if there are exactly two "Flight" windows
