@@ -14,8 +14,8 @@ Setup Process:
     VSCode
         1. Extract zip file
         2. Open folder in VSCode
-        3. Install python from microsoft directly (popup noti)
-        4. Select interpreter: choose python interpreter from ms store
+        3. Install Python from VSCode if you don't have it installed already
+        4. Select interpreter: choose the Python interpreter VSCode recommends from Microsoft Store
         5. run pip install numpy
         6. click on create for pop up asking to create a virtual environment
         7. try pip install numpy again, update if asked
