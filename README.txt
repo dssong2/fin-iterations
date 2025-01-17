@@ -11,6 +11,16 @@ Safety Information:
     6. If you have any problems whatsoever, let me know at a meeting or email me at dssong2
 
 Setup Process:
+    VSCode
+        1. Extract zip file
+        2. Open folder in VSCode
+        3. Install python from microsoft directly (popup noti)
+        4. Select interpreter: choose python interpreter from ms store
+        5. run pip install numpy
+        6. click on create for pop up asking to create a virtual environment
+        7. try pip install numpy again, update if asked
+        8. pip install the rest of the libraries
+
     OpenRocket (version 24.12.beta.1):
         1. Move the OpenRocket file location to the "openrocket" folder here in ...\fin-iterations\main\openrocket
         2. Open the OpenRocket file you would like to run fin iterations on in the new location
