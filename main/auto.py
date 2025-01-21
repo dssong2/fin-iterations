@@ -1,13 +1,13 @@
 import numpy as np
 from exec import get_data
 
-# Parameters
+# Parameters (change as desired)
     # Root chord: 6 - 15
     # Tip chord: 3 - 10
     # Height: 3 - 4
     # Angle: 30 - 70
+#  Check to make sure valid simuations are run in OpenRocket using the most extreme geometry combination
 
-## TO DO: Create automation of the program with these values in the array
 sus_root_chord_list = np.arange(6, 15.5, 0.5)     # Including 15
 sus_tip_chord_list = np.arange(3, 10.5, 0.5)      # Including 10
 sus_height_span_list = np.arange(3, 4.1, 0.1)     # Including 4

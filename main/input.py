@@ -1,6 +1,7 @@
 from exec import get_data
 
 ## Geometry input variables, sus_angle input
+
 sus_root_chord = float(input("Root chord (in): ")) ## DATA POINT ##
 assert sus_root_chord >= 6.0
 sus_tip_chord = float(input("Tip chord (in): ")) ## DATA POINT ##
