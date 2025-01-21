@@ -70,7 +70,7 @@ def get_CG():
 
 ## Get damping ratio export data
 def get_DR_data():
-    ag.click(378, 55) # Clicks on "Flight simulations"
+    ag.click(365, 55) # Clicks on "Flight simulations"
     while True:
         ag.hotkey('ctrl', 'c')
         data = pc.paste()
