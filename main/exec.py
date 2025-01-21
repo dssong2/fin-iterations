@@ -23,8 +23,8 @@ def get_data(sus_root_chord, sus_tip_chord, sus_height_span, sus_angle):
     minimize_window(open_rocket)
     minimize_window("RASAero II")
 
-    sweep_length = sus_height_span * np.tan(np.radians(sus_angle))
-    print(f"Sweep length (in): {sweep_length} in")
+    sus_sweep_length = sus_height_span * np.tan(np.radians(sus_angle))
+    print(f"Sweep length (in): {sus_sweep_length} in")
 
     ## OpenRocket ##
     activate_window(open_rocket)
@@ -36,7 +36,7 @@ def get_data(sus_root_chord, sus_tip_chord, sus_height_span, sus_angle):
     ## or_output stuff, return relevant numbers and store them as variables for rasaero use
     oro.valid_full_stability()
 
-    sus_length = oro.get_length(sus_root_chord, sus_tip_chord, sweep_length) # Adjust base length in oro file as needed
+    sus_length = oro.get_length(sus_root_chord, sus_tip_chord, sus_sweep_length) # Adjust base length in oro file as needed
     base_stability = oro.get_stability(sus_length) ## DATA POINT ##
     sus_mass = oro.get_mass()[0] # RASAero input
     sus_CG = oro.get_CG()[0] # RASAero input
@@ -53,7 +53,7 @@ def get_data(sus_root_chord, sus_tip_chord, sus_height_span, sus_angle):
     ## RASAero ##
     activate_window("RASAero II")
     rasi.setup()
-    rasi.input_geometry(sus_root_chord, sus_tip_chord, sus_height_span, sweep_length)
+    rasi.input_geometry(sus_root_chord, sus_tip_chord, sus_height_span, sus_sweep_length)
     rasi.input_or_data(sus_CG, sus_mass, full_CG, full_mass)
     raso.get_ras_data()
     raso.get_aero_plot()
@@ -82,3 +82,7 @@ def get_data(sus_root_chord, sus_tip_chord, sus_height_span, sus_angle):
     print(f"Sustainer CG: {sus_CG} in")
     print(f"Full stack mass with motors: {full_mass} lb")
     print(f"Full stack CG: {full_CG} in\n\n")
+
+    relevant_data = [sus_root_chord, sus_tip_chord, sus_height_span, sus_sweep_length, sus_angle,
+                     base_stability, max_stability_percent, max_stability_time, CNalpha, min_DR, max_DR, altitude]
+    return relevant_data

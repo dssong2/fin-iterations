@@ -3,6 +3,7 @@ import pandas as pd
 import re
 import pyperclip as pc
 import time
+import os
 
 sus_data = None
 full_data = None
@@ -69,7 +70,7 @@ def get_CG():
 
 ## Get damping ratio export data
 def get_DR_data():
-    ag.click(362, 55) # Clicks on "Flight simulations"
+    ag.click(378, 55) # Clicks on "Flight simulations"
     while True:
         ag.hotkey('ctrl', 'c')
         data = pc.paste()
@@ -94,7 +95,8 @@ def get_DR_data():
 
 def get_DR():
     get_DR_data()
-    data = pd.read_csv(r'C:\Users\astro\OneDrive - University of Illinois - Urbana\ISS\SDA 24-25\Fin Iteration Automation\main\openrocket\damping ratio.csv')
+    file_path = os.path.abspath("openrocket/damping ratio.csv")
+    data = pd.read_csv(file_path)
     data_filtered = data[(data['# Time (s)'] > 4.0) & (data['Damping Ratio ()'] > 0.0)]
     min_value = data_filtered['Damping Ratio ()'].min()
     max_value = data_filtered['Damping Ratio ()'].max()

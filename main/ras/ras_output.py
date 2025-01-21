@@ -2,6 +2,7 @@ import pyautogui as ag
 import pandas as pd
 import pygetwindow as gw
 import time
+import os
 
 def get_ras_data():
     while True:
@@ -46,7 +47,8 @@ def get_aero_plot():
     ag.hotkey('alt', 'f4')
 
 def get_alt_stab_time_mach(sus_length):
-    data = pd.read_csv(r'C:\Users\astro\OneDrive - University of Illinois - Urbana\ISS\SDA 24-25\Fin Iteration Automation\main\ras\Flight Test.CSV')
+    file_path = os.path.abspath("ras/Flight Test.CSV")
+    data = pd.read_csv(file_path)
     altitude = data['Altitude (ft)'].max()
     altitude_idx = data['Altitude (ft)'].idxmax()
     altitude_time = data.loc[altitude_idx, 'Time (sec)']
@@ -65,7 +67,8 @@ def get_alt_stab_time_mach(sus_length):
 
 def get_ras_values(sus_length):
     values = get_alt_stab_time_mach(sus_length)
-    data = pd.read_csv(r'C:\Users\astro\OneDrive - University of Illinois - Urbana\ISS\SDA 24-25\Fin Iteration Automation\main\ras\CD Test.CSV')
+    file_path = os.path.abspath("ras/CD Test.CSV")
+    data = pd.read_csv(file_path)
     
     max_mach = values[3]
     max_mach = round(max_mach, 2)
