@@ -1,5 +1,4 @@
 import pandas as pd
-import os
 from exec import get_data
 
 ## Geometry input variables, sus_angle input
