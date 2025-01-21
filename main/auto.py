@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import os
 from exec import get_data
 
 # Parameters (change as desired)
